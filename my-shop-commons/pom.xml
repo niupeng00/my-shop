@@ -44,6 +44,21 @@
         </dependency>
         <!-- Log End -->
 
+        <!-- Json Begin-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+        </dependency>
+        <!-- Json End -->
+
         <!-- hibernate-validator Begtin -->
         <dependency>
             <groupId>org.hibernate.validator</groupId>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.funtl.my.shop.web.admin.dao.TbUserDao">
+    <!-- SQL 片段<遵循重构原则,提取下面出现的重复列名> -->
+    <sql id="tbUserColumns">
+        u.id,
+        u.username,
+        u.password,
+        u.phone,
+        u.email,
+        u.created,
+        u.updated
+    </sql>
+
+    <select id="getByEmail" resultType="TbUser">
+        SELECT
+          <include refid="tbUserColumns" />
+        FROM
+          tb_user AS  u
+        WHERE
+          u.email = #{email}
+    </select>
+
+    <select id="selectAll" resultType="TbUser">
+        SELECT
+            <include refid="tbUserColumns" />
+        FROM
+            tb_user AS u
+    </select>
+
+    <insert id="insert">
+        INSERT INTO tb_user (
+            username,
+            password,
+            phone,
+            email,
+            created,
+            updated
+        )
+        VALUES
+          (
+            #{username},
+            #{password},
+            #{phone},
+            #{email},
+            #{created},
+            #{updated}
+          )
+    </insert>
+
+    <delete id="delete">
+        DELETE FROM tb_user WHERE id = #{id}
+    </delete>
+
+    <select id="getById" resultType="TbUser">
+        SELECT
+            <include refid="tbUserColumns" />
+        FROM
+            tb_user AS u
+        WHERE
+            u.id = #{id}
+    </select>
+
+    <update id="update">
+        UPDATE
+            tb_user
+        SET
+            username = #{username},
+            PASSWORD = #{password},
+            phone = #{phone},
+            email = #{email},
+            updated = #{updated}
+        WHERE
+            id = ${id}
+    </update>
+
+    <select id="selectByUsername" resultType="TbUser">
+        SELECT
+            <include refid="tbUserColumns" />
+        FROM
+            tb_user AS u
+        WHERE
+            u.username LIKE CONCAT('%',#{username},'%')
+    </select>
+
+    <select id="search1" resultType="TbUser">
+        SELECT
+            <include refid="tbUserColumns" />
+        FROM
+            tb_user AS u
+        <where>
+            <if test="username != null and username != ''">
+                OR u.username LIKE CONCAT('%',#{username},'%')
+            </if>
+            <if test="phone != null and phone != ''">
+                OR u.phone LIKE CONCAT('%',#{phone},'%')
+            </if>
+            <if test="email != null and email != ''">
+                OR u.email LIKE CONCAT('%',#{email},'%')
+            </if>
+        </where>
+    </select>
+
+    <select id="search" resultType="TbUser">
+        SELECT
+          <include refid="tbUserColumns" />
+        FROM
+        tb_user AS u
+        <where>
+            <if test="username != null and username != ''">
+                AND u.username LIKE CONCAT('%',#{username},'%')
+            </if>
+            <if test="phone != null and phone != ''">
+                AND u.phone LIKE CONCAT('%',#{phone},'%')
+            </if>
+            <if test="email != null and email != ''">
+                AND u.email LIKE CONCAT('%',#{email},'%')
+            </if>
+        </where>
+    </select>
+    
+    <delete id="deleteMulti">
+        DELETE FROM tb_user
+        WHERE id IN
+        <foreach collection="array" open="(" close=")" separator="," item="id">
+            #{id}
+        </foreach>
+    </delete>
+
+    <select id="page" resultType="TbUser" parameterType="java.util.Map">
+        SELECT
+            <include refid="tbUserColumns" />
+        FROM
+            tb_user AS u
+        <where>
+            <if test="tbUser.username != null and tbUser.username != ''" >
+                AND u.username LIKE CONCAT('%', #{tbUser.username}, '%')
+            </if>
+        </where>
+        LIMIT #{start},#{length}
+    </select>
+    
+    <select id="count" resultType="java.lang.Integer">
+        SELECT
+            COUNT(*)
+        FROM
+            tb_user AS u
+        <where>
+            <if test="username != null and username != ''" >
+                AND u.username LIKE CONCAT('%', #{username}, '%')
+            </if>
+        </where>
+    </select>
+</mapper>

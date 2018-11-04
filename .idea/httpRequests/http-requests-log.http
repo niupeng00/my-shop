@@ -1,0 +1,72 @@
+GET http://localhost:8080/user/page?start=0&length=1&username=test02
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-11-04T112258.200.json
+
+###
+
+GET http://localhost:8080/user/page?start=0&length=1&username=test01
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-11-04T103541.200.json
+
+###
+
+GET http://localhost:8080/main
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-19T101759.404.html
+
+###
+
+GET http://localhost:8080/login
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-19T100645.404.html
+
+###
+
+GET http://localhost:8080/login
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8080/login
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8080/login
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8080/login
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:8080/login
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-18T113338.500.html
+
+###
+
+GET http://localhost:8080/login
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-10-18T113305.500.html
+
+###
+
