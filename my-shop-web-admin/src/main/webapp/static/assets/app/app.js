@@ -151,9 +151,9 @@ var App = function () {
             'deferRender': true,
             'ajax': {
                 'url': url,
-                'data': {
+                /*'data': {
                     'username': 'test01'
-                },
+                },*/
             },
             'columns': columns,
             'language': {
