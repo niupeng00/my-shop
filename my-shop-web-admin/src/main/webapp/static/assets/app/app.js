@@ -90,8 +90,8 @@ var App = function () {
                         "success": function (data) {
                             //删除成功
                             if (data.status === 200){
-                                dataMessage(data);
-                                setTimeout(function () {
+                                    dataMessage(data);
+                                    setTimeout(function () {
                                     window.location.reload();
                                 },500)
                             }
