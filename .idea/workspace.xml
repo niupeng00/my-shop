@@ -7419,6 +7419,8 @@
       <change afterPath="$PROJECT_DIR$/my-shop-web-admin/target/my-shop-web-admin-1.0.0-SNAPSHOT/static/assets/plugins/timepicker/bootstrap-timepicker.min.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/my-shop-web-admin/target/my-shop-web-admin-1.0.0-SNAPSHOT/static/assets/plugins/timepicker/bootstrap-timepicker.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-shop-web-admin/src/main/resources/mapper/TbUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/resources/mapper/TbUserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/WEB-INF/views/user_list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/WEB-INF/views/user_list.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/my-shop-dependencies/target/" />
@@ -7466,20 +7468,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/static/assets/app/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="155" column="20" selection-start-line="153" selection-start-column="16" selection-end-line="155" selection-end-column="20" />
+            <state relative-caret-position="314">
+              <caret line="158" column="25" lean-forward="true" selection-start-line="158" selection-start-column="25" selection-end-line="158" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="user_list.jsp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="user_list.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/WEB-INF/views/user_list.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="182" column="30" lean-forward="true" selection-start-line="182" selection-start-column="30" selection-end-line="182" selection-end-column="30" />
+            <state relative-caret-position="276">
+              <caret line="194" column="26" selection-start-line="194" selection-start-column="26" selection-end-line="194" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -7487,8 +7489,8 @@
       <file leaf-file-name="TbUserMapper.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my-shop-web-admin/src/main/resources/mapper/TbUserMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2565">
-              <caret line="135" column="56" selection-start-line="135" selection-start-column="50" selection-end-line="135" selection-end-column="56" />
+            <state relative-caret-position="458">
+              <caret line="161" column="52" selection-start-line="161" selection-start-column="47" selection-end-line="161" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -7613,7 +7615,6 @@
         <option value="$PROJECT_DIR$/my-shop-commons/src/main/java/com/funtl/my/shop/commons/dto/PageInfo.java" />
         <option value="$PROJECT_DIR$/my-shop-commons/src/main/java/com/funtl/my/shop/commons/persistence/BaseEntity.java" />
         <option value="$PROJECT_DIR$/my-shop-domain/pom.xml" />
-        <option value="$PROJECT_DIR$/my-shop-web-admin/src/main/resources/mapper/TbUserMapper.xml" />
         <option value="$PROJECT_DIR$/my-shop-web-admin/src/main/java/com/funtl/my/shop/web/admin/dao/TbUserDao.java" />
         <option value="$PROJECT_DIR$/my-shop-web-admin/src/main/java/com/funtl/my/shop/web/admin/service/TbUserService.java" />
         <option value="$PROJECT_DIR$/my-shop-web-admin/src/main/java/com/funtl/my/shop/web/admin/service/impl/TbUserServiceImpl.java" />
@@ -7622,8 +7623,9 @@
         <option value="$PROJECT_DIR$/my-shop-web-admin/pom.xml" />
         <option value="$PROJECT_DIR$/my-shop-commons/pom.xml" />
         <option value="$PROJECT_DIR$/my-shop-domain/src/main/java/com/funtl/my/shop/domain/TbUser.java" />
-        <option value="$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/WEB-INF/views/user_list.jsp" />
         <option value="$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/static/assets/app/app.js" />
+        <option value="$PROJECT_DIR$/my-shop-web-admin/src/main/resources/mapper/TbUserMapper.xml" />
+        <option value="$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/WEB-INF/views/user_list.jsp" />
       </list>
     </option>
   </component>
@@ -7746,7 +7748,16 @@
               <item name="my-shop-web-admin" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my-shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my-shop" type="462c0819:PsiDirectoryNode" />
+              <item name="my-shop-web-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="my-shop" type="b2602c69:ProjectViewProjectNode" />
@@ -7755,17 +7766,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="my-shop" type="b2602c69:ProjectViewProjectNode" />
-              <item name="my-shop" type="462c0819:PsiDirectoryNode" />
-              <item name="my-shop-web-admin" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -8318,7 +8318,7 @@
       <workItem from="1541165519616" duration="5773000" />
       <workItem from="1541290654007" duration="2824000" />
       <workItem from="1541294555043" duration="5615000" />
-      <workItem from="1541310504456" duration="2607000" />
+      <workItem from="1541310504456" duration="3178000" />
     </task>
     <task id="LOCAL-00001" summary="my-shop">
       <created>1540995809347</created>
@@ -8369,7 +8369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541314225450</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="my-shop">
+      <created>1541314698761</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1541314698761</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -8405,7 +8412,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155483000" />
+    <option name="totallyTimeSpent" value="156054000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -8418,7 +8425,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="18" sideWeight="0.50107294" side_tool="true" weight="0.32962137" />
@@ -8427,18 +8433,18 @@
       <window_info anchor="right" id="Maven Projects" order="6" weight="0.28487125" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="JRebel Executor" order="16" />
-      <window_info anchor="bottom" id="TypeScript" order="19" />
+      <window_info anchor="bottom" id="TypeScript" order="19" weight="0.32998884" />
       <window_info id="Designer" order="6" />
       <window_info anchor="right" id="Database" order="4" weight="0.3299356" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="3" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8862661" weight="0.30546266" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.8862661" visible="true" weight="0.30546266" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32887402" />
       <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49892703" weight="0.3277592" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32887402" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="14" visible="true" weight="0.32998884" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32998884" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3608018" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32887402" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32887402" />
@@ -8759,13 +8765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-shop-web-admin/src/main/resources/mapper/TbUserMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2565">
-          <caret line="135" column="56" selection-start-line="135" selection-start-column="50" selection-end-line="135" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my-shop-web-admin/src/main/java/com/funtl/my/shop/web/admin/web/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2242">
@@ -8811,17 +8810,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/WEB-INF/views/user_list.jsp">
+    <entry file="file://$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/static/assets/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="182" column="30" lean-forward="true" selection-start-line="182" selection-start-column="30" selection-end-line="182" selection-end-column="30" />
+        <state relative-caret-position="314">
+          <caret line="158" column="25" lean-forward="true" selection-start-line="158" selection-start-column="25" selection-end-line="158" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/static/assets/app/app.js">
+    <entry file="file://$PROJECT_DIR$/my-shop-web-admin/src/main/resources/mapper/TbUserMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="155" column="20" selection-start-line="153" selection-start-column="16" selection-end-line="155" selection-end-column="20" />
+        <state relative-caret-position="458">
+          <caret line="161" column="52" selection-start-line="161" selection-start-column="47" selection-end-line="161" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/WEB-INF/views/user_list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="194" column="26" selection-start-line="194" selection-start-column="26" selection-end-line="194" selection-end-column="26" />
         </state>
       </provider>
     </entry>
