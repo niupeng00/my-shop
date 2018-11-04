@@ -16,46 +16,12 @@
       <change afterPath="$PROJECT_DIR$/.idea/httpRequests/2018-10-19T101759.404.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-commons/src/main/java/com/funtl/my/shop/commons/dto/PageInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-commons/src/main/java/com/funtl/my/shop/commons/persistence/BaseEntity.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/my-shop-commons/target/classes/com/funtl/my/shop/commons/constant/ConstantUtils.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/my-shop-commons/target/classes/com/funtl/my/shop/commons/dto/BaseResult.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/my-shop-commons/target/classes/com/funtl/my/shop/commons/utils/CookieUtils.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/my-shop-commons/target/classes/com/funtl/my/shop/commons/utils/MapperUtils.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/my-shop-commons/target/classes/com/funtl/my/shop/commons/utils/RegexpUtils.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/my-shop-domain/target/classes/com/funtl/my/shop/domain/TbUser.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/logs/log.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/logs/log.log.2018-10-20" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/my-shop-web-admin.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/java/com/funtl/my/shop/web/admin/dao/TbUserDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/java/com/funtl/my/shop/web/admin/service/TbUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/java/com/funtl/my/shop/web/admin/service/impl/TbUserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/java/com/funtl/my/shop/web/admin/web/controller/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/java/com/funtl/my/shop/web/admin/web/controller/MainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/java/com/funtl/my/shop/web/admin/web/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/java/com/funtl/my/shop/web/admin/web/interceptor/LoginInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/java/com/funtl/my/shop/web/admin/web/interceptor/PermissionInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/resources/jdbc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/resources/log4j.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/resources/mapper/TbUserMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/resources/myshop.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/resources/spring-context-druid.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/resources/spring-context-mybatis.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/resources/spring-context.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/resources/spring-mvc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/WEB-INF/includes/copyright.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/WEB-INF/includes/footer.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/WEB-INF/includes/header.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/WEB-INF/includes/menu.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/WEB-INF/includes/nav.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/WEB-INF/tags/sys/modal.tag" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/WEB-INF/views/main.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/WEB-INF/views/user_form.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/WEB-INF/views/user_list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/static/assets/app/app.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/static/assets/app/validate.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/static/assets/bower_components/Flot/.bower.json" afterDir="false" />
@@ -7401,7 +7367,6 @@
       <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/static/assets/plugins/timepicker/bootstrap-timepicker.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/static/assets/plugins/timepicker/bootstrap-timepicker.min.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/static/assets/plugins/timepicker/bootstrap-timepicker.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-shop-web-admin/src/test/java/com/funtl/my/shop/web/admin/service/test/TbUserServiceTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/my-shop-web-admin/target/classes/com/funtl/my/shop/web/admin/dao/TbUserDao.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/my-shop-web-admin/target/classes/com/funtl/my/shop/web/admin/service/TbUserService.class" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/my-shop-web-admin/target/classes/com/funtl/my/shop/web/admin/service/impl/TbUserServiceImpl.class" afterDir="false" />
@@ -14829,20 +14794,6 @@
       <change afterPath="$PROJECT_DIR$/my-shop-web-admin/target/my-shop-web-admin-1.0.0-SNAPSHOT/static/assets/plugins/timepicker/bootstrap-timepicker.min.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/my-shop-web-admin/target/my-shop-web-admin-1.0.0-SNAPSHOT/static/assets/plugins/timepicker/bootstrap-timepicker.min.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/my-shop-web-admin/target/test-classes/com/funtl/my/shop/web/admin/service/test/TbUserServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/my_shop_web_admin_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/my_shop_web_admin_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/my_shop_web_api_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/my_shop_web_api_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/my_shop_web_ui_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/my_shop_web_ui_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-shop-commons/my-shop-commons.iml" beforeDir="false" afterPath="$PROJECT_DIR$/my-shop-commons/my-shop-commons.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-shop-commons/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/my-shop-commons/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-shop-dependencies/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/my-shop-dependencies/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-shop-domain/my-shop-domain.iml" beforeDir="false" afterPath="$PROJECT_DIR$/my-shop-domain/my-shop-domain.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-shop-domain/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/my-shop-domain/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-shop-domain/src/main/java/com/funtl/my/shop/domain/TbUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/my-shop-domain/src/main/java/com/funtl/my/shop/domain/TbUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-shop-web-api/my-shop-web-api.iml" beforeDir="false" afterPath="$PROJECT_DIR$/my-shop-web-api/my-shop-web-api.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-shop-web-ui/my-shop-web-ui.iml" beforeDir="false" afterPath="$PROJECT_DIR$/my-shop-web-ui/my-shop-web-ui.iml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/my-shop-dependencies/target/" />
@@ -14902,8 +14853,8 @@
       <file leaf-file-name="user_list.jsp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/WEB-INF/views/user_list.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="504">
-              <caret line="194" selection-start-line="194" selection-end-line="194" />
+            <state relative-caret-position="409">
+              <caret line="189" column="38" lean-forward="true" selection-start-line="189" selection-start-column="38" selection-end-line="189" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -15174,6 +15125,15 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="my-shop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="my-shop" type="462c0819:PsiDirectoryNode" />
+              <item name="my-shop-web-admin" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="my-shop" type="b2602c69:ProjectViewProjectNode" />
@@ -15743,7 +15703,7 @@
       <workItem from="1540992164454" duration="18020000" />
       <workItem from="1541165519616" duration="5773000" />
       <workItem from="1541290654007" duration="2824000" />
-      <workItem from="1541294555043" duration="5391000" />
+      <workItem from="1541294555043" duration="5615000" />
     </task>
     <task id="LOCAL-00001" summary="my-shop">
       <created>1540995809347</created>
@@ -15752,7 +15712,14 @@
       <option name="project" value="LOCAL" />
       <updated>1540995809347</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="my-shop">
+      <created>1541303441035</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1541303441035</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -15788,7 +15755,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152652000" />
+    <option name="totallyTimeSpent" value="152876000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -16209,8 +16176,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/my-shop-web-admin/src/main/webapp/WEB-INF/views/user_list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="194" selection-start-line="194" selection-end-line="194" />
+        <state relative-caret-position="409">
+          <caret line="189" column="38" lean-forward="true" selection-start-line="189" selection-start-column="38" selection-end-line="189" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -16259,7 +16226,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.34837356" />
               </list>
             </option>
           </splitter-proportions>
@@ -16278,7 +16245,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.7</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -16294,7 +16261,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.34837356" />
                 <option value="0.6" />
               </list>
             </option>
@@ -16319,7 +16286,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.34837356" />
               </list>
             </option>
           </splitter-proportions>
