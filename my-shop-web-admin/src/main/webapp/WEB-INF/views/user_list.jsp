@@ -175,8 +175,8 @@
                 'data': function (row, type, val, meta) {
                     var detailURL = "/user/detail?id="+row.id;
                     return '<button type="button" class="btn btn-default btn-xs" onclick="App.showDetail(\''+detailURL+'\')"><i class="fa fa-search"> 查看</i></a>&nbsp;&nbsp;&nbsp;'+
-                        '<a href="/user/form?id='+row.id+'" type="button" class="btn btn-primary btn-xs"><i class="fa fa-edit"> 编辑</i></a>&nbsp;&nbsp;&nbsp;'+
-                        '<a href="#" type="button" class="btn btn-danger  btn-xs"><i class="fa fa-trash-o"> 删除</i></a>'
+                        '<a href="/user/form?id='+row.id+'" type="button" class="btn btn-primary btn-xs" ><i class="fa fa-edit"> 编辑</i></a>&nbsp;&nbsp;&nbsp;'+
+                        '<button type="button" class="btn btn-danger  btn-xs"><i class="fa fa-trash-o" onclick="App.deleteMulti(\'/user/delete\')"> 删除</i></a>'
                 }
             },
         ];

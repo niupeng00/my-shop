@@ -31,9 +31,9 @@ public class TbUserServiceTest {
     @Test
     public void testSetTbUser(){
         TbUser tbUser = new TbUser();
-        tbUser.setUsername("niupeng");
+        tbUser.setUsername("niupengh");
         tbUser.setEmail("niu@QQ.com");
-        tbUser.setPhone("13231191983");
+        tbUser.setPhone("13231191983h");
         tbUser.setPassword(DigestUtils.md5DigestAsHex("123456".getBytes()));
         tbUser.setCreated(new Date());
         tbUser.setUpdated(new Date());

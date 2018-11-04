@@ -28,7 +28,7 @@
             <li class="header">功能菜单</li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-share"></i> <span>用户管理</span>
+                    <i class="fa fa-male"></i> <span>用户管理</span>
                     <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
                         </span>
@@ -40,14 +40,14 @@
             </li>
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-table"></i> <span>表格目录</span>
+                    <i class="fa fa-book"></i> <span>内容管理</span>
                     <span class="pull-right-container">
                             <i class="fa fa-angle-left pull-right"></i>
                         </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> 简单表</a></li>
-                    <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> 数据表</a></li>
+                    <li><a href="/content/category/list"><i class="fa fa-circle-o"></i> 内容分类</a></li>
+                    <li><a href="#"><i class="fa fa-circle-o"></i> 内容列表</a></li>
                 </ul>
             </li>
         </ul>

@@ -19,26 +19,28 @@ var Validate = function () {
     };
 
     /**
-     * 表单校验
+     * 表单校验... 增加自定义验证规则
      */
-    $(function () {
-        $("#inputForm").validate({
-            errorElement: 'span',
-            errorClass: 'help-block',
+    var handlerInitCustomValidate = function () {
+        $(function () {
+            $("#inputForm").validate({
+                errorElement: 'span',
+                errorClass: 'help-block',
 
-            errorPlacement: function (error, element) {
-                element.parent().parent().attr("class", "form-group has-error");
-                error.insertAfter(element);
-            }
+                errorPlacement: function (error, element) {
+                    element.parent().parent().attr("class", "form-group has-error");
+                    error.insertAfter(element);
+                }
+            });
         });
-    });
-
+    };
     /**
      * 公共方法,页面只能掉用公共方法,私有方法调用不到的
      */
     return {
         init: function () {
             handlerInitValidate();
+            handlerInitCustomValidate();
         }
     }
 
