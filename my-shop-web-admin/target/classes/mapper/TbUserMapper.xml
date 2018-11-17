@@ -118,7 +118,7 @@
             </if>
         </where>
     </select>
-    
+
     <delete id="deleteMulti">
         DELETE FROM tb_user
         WHERE id IN
@@ -145,7 +145,7 @@
         </where>
         LIMIT #{start},#{length}
     </select>
-    
+
     <select id="count" resultType="java.lang.Integer">
         SELECT
             COUNT(*)

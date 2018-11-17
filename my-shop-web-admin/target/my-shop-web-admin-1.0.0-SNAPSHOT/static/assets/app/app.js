@@ -60,6 +60,7 @@ var App = function () {
 
         $("#modal-default").modal("show");
 
+        //判断用户是否选择了数据项
         if (_idArray.length === 0){
             $("#modal-message").html("您还没有选择任何数据项,至少选择一项!");
         } else {
@@ -123,6 +124,7 @@ var App = function () {
      * @param url
      */
     var handlerShowDetail = function (url) {
+        //通过 Ajax 请求 html 的方式将 jsp 装载进模态框中
         $.ajax({
             url: url,
             type: "GET",
@@ -189,6 +191,9 @@ var App = function () {
     };
 
     return {
+        /**
+         * 初始化
+         */
         init: function () {
             handlerCheckbox();
             handlerCheckboxAll();
@@ -201,14 +206,28 @@ var App = function () {
             return _checkbox;
         },
 
+        /**
+         * 批量删除
+         * @param url
+         */
         deleteMulti: function (url) {
             handlerDeleteMulti(url);
         },
 
+        /**
+         * 查看详情
+         * @param url
+         */
         showDetail: function (url) {
             handlerShowDetail(url)
         },
 
+        /**
+         * 初始化DataTables
+         * @param url
+         * @param columns
+         * @returns {*|jQuery}
+         */
         initDataTables: function (url, columns) {
             return handerInitDataTables(url, columns);
         }

@@ -85,4 +85,5 @@ public interface TbUserDao {
      * @return
      */
     Integer count(TbUser tbUser);
+
 }
