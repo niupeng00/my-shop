@@ -190,6 +190,36 @@ var App = function () {
         return _dataTable;
     };
 
+    /**
+     * 初始化zTree
+     * @param url
+     * @param autoParam
+     * @param callback
+     */
+    var handlerInitZTree = function (url, autoParam, callback) {
+        var setting = {
+            view: {
+                selectedMulti: false
+            },
+
+            async: {
+                enable: true,
+                url: url,
+                autoParam: autoParam,
+            }
+        };
+        $.fn.zTree.init($("#myTree"), setting);
+
+        $("#btnModal").bind("click", function () {
+            var zTree = $.fn.zTree.getZTreeObj("myTree");
+            var nodes = zTree.getSelectedNodes();
+            if (nodes.length == 0) {
+                alert("请先选择一个父节点");
+            } else {
+                callback(nodes);
+            }
+        });
+    }
     return {
         /**
          * 初始化
@@ -230,6 +260,16 @@ var App = function () {
          */
         initDataTables: function (url, columns) {
             return handerInitDataTables(url, columns);
+        },
+
+        /**
+         * 初始化zTree
+         * @param url
+         * @param autoParam
+         * @param callback
+         */
+        initZTree: function (url, autoParam, callback) {
+            handlerInitZTree(url, autoParam, callback);
         }
     }
 }();

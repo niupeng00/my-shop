@@ -24,4 +24,13 @@
             a.sort_order ASC,
             a.is_parent DESC;
     </select>
+
+    <select id="selectByPid" resultType="TbContentCategory">
+        SELECT
+          <include refid="tbContentCategoryColumns" />
+        FROM
+          tb_content_category AS a
+        WHERE
+          a.parent_id = #{parent_id}
+    </select>
 </mapper>

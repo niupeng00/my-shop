@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,6 +34,28 @@ public class ContentCategoryController {
     }
 
     /**
+     * 属性结构
+     * @return
+     */
+    @ResponseBody
+    @RequestMapping(value = "/tree/data", method = RequestMethod.POST)
+    public List<TbContentCategory> treeData(Long id){
+        if (id == null) id = 0L;
+        return tbcontentcategoryservice.selectByPid(id);
+    }
+
+    /**
+     * 添加,查看,编辑页面
+     * @return
+     */
+    @GetMapping(value = "form")
+    public String from(Model model){
+        TbContentCategory tbContentCategory = new TbContentCategory();
+        model.addAttribute("tbContentCategory", tbContentCategory);
+        return "content_category_form";
+    }
+
+    /**
      * treeTable插件需要的排序功能
      * @param sourceList 数据源的集合
      * @param targetList 排序后的集合
@@ -43,7 +67,7 @@ public class ContentCategoryController {
                 targetList.add(tbContentCategory);
 
                 //判断有没有子节点, 如果有则继续追加
-                if (tbContentCategory.getParent()) {
+                if (tbContentCategory.getIsParent()) {
                     for (TbContentCategory contentCategory : sourceList) {
                         if (contentCategory.getParentId().equals(tbContentCategory.getId())) {
                             sortList(sourceList, targetList, tbContentCategory.getId());

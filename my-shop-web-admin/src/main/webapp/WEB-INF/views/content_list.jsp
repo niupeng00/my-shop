@@ -159,9 +159,24 @@
             { 'data': 'title' },
             { 'data': 'subTitle' },
             { 'data': 'titleDesc' },
-            { 'data': 'url' },
-            { 'data': 'pic' },
-            { 'data': 'pic2' },
+            { 'data': function (row, type, val, meta){
+                    if (row.url == null) {
+                        return "";
+                    }
+                    return '<a href="'+row.url+'" target="_blank">查看</a>';
+                }},
+            { 'data': function (row, type, val, meta) {
+                    if (row.pic == null) {
+                        return "";
+                    }
+                    return '<a href="'+row.pic+'" target="_blank">查看</a>';
+                }},
+            { 'data': function (row, type, val, meta) {
+                    if (row.pic2 == null) {
+                        return "";
+                    }
+                    return '<a href="'+row.pic2+'" target="_blank">查看</a>';
+                }},
             { 'data': 'updated' },
             {
                 'data': function (row, type, val, meta) {

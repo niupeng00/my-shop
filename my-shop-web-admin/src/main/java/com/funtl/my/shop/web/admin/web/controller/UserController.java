@@ -2,6 +2,7 @@ package com.funtl.my.shop.web.admin.web.controller;
 
 import com.funtl.my.shop.commons.dto.BaseResult;
 import com.funtl.my.shop.commons.dto.PageInfo;
+import com.funtl.my.shop.commons.validator.BeanValidator;
 import com.funtl.my.shop.domain.TbUser;
 import com.funtl.my.shop.web.admin.service.TbUserService;
 import org.apache.commons.lang3.StringUtils;
@@ -70,6 +71,8 @@ public class UserController {
      */
     @PostMapping(value = "save")
     public String saveUser(TbUser tbUser, Model model,RedirectAttributes redirectAttributes){
+
+
         BaseResult baseResult = tbUserService.save(tbUser);
 
         //保存成功

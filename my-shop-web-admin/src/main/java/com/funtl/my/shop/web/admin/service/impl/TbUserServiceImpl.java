@@ -3,6 +3,7 @@ package com.funtl.my.shop.web.admin.service.impl;
 import com.funtl.my.shop.commons.dto.BaseResult;
 import com.funtl.my.shop.commons.dto.PageInfo;
 import com.funtl.my.shop.commons.utils.RegexpUtils;
+import com.funtl.my.shop.commons.validator.BeanValidator;
 import com.funtl.my.shop.domain.TbUser;
 import com.funtl.my.shop.web.admin.dao.TbUserDao;
 import com.funtl.my.shop.web.admin.service.TbUserService;
@@ -46,8 +47,13 @@ public class TbUserServiceImpl implements TbUserService {
 
     @Override
     public BaseResult save(TbUser tbUser) {
-        BaseResult baseResult = checkTbUser(tbUser);
-        if (baseResult.getStatus() == BaseResult.STATUS_SUCCESS){
+        String validator = BeanValidator.validator(tbUser);
+
+        if (validator != null ){
+            //验证不通过
+            return BaseResult.fail(validator);
+        } else {
+            //通过
             tbUser.setUpdated(new Date());
             //新增用户
             if (tbUser.getId() == null){
@@ -58,12 +64,8 @@ public class TbUserServiceImpl implements TbUserService {
                 //编辑用户
                 tbUserDao.update(tbUser);
             }
-            baseResult.setMessage("保存用户信息成功");
+            return BaseResult.success("保存用户信息成功");
         }
-
-
-
-        return baseResult;
     }
 
     @Override

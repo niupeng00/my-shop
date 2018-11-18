@@ -46,7 +46,7 @@
                             <h3 class="box-title">分类列表</h3>
 
                             <div class="box-body">
-                                <a href="#" type="button" class="btn btn-default btn-xs"><i class="fa fa-plus"> 新增</i></a>&nbsp;&nbsp;&nbsp;
+                                <a href="/content/category/form" type="button" class="btn btn-default btn-xs"><i class="fa fa-plus"> 新增</i></a>&nbsp;&nbsp;&nbsp;
                                 <a href="#" type="button" class="btn btn-default btn-xs"><i class="fa fa-download"> 导入</i></a>&nbsp;&nbsp;&nbsp;
                                 <a href="#" type="button" class="btn btn-default btn-xs"><i class="fa fa-upload"> 导出</i></a>&nbsp;&nbsp;&nbsp;
                             </div>

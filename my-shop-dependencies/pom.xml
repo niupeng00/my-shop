@@ -41,6 +41,8 @@
         <javax.el-api.version>2.2.4</javax.el-api.version>
         <javax.el.version>2.2.4</javax.el.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
+        <lombod.version>1.16.18</lombod.version>
+        <hibernate-validator.version>6.0.12.Final</hibernate-validator.version>
     </properties>
 
     <dependencyManagement>
@@ -190,6 +192,21 @@
             </dependency>
             <!-- hibernate-validator End -->
 
+            <!-- Lombok Begin-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombod.version}</version>
+            </dependency>
+            <!-- Lombok End -->
+
+            <!-- Spring Validation Begin -->
+            <dependency>
+                <groupId>org.hibernate.validator</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
+            <!-- Spring Validation End -->
 
         </dependencies>
     </dependencyManagement>

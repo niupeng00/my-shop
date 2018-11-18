@@ -125,13 +125,13 @@
         FROM
             tb_content AS a
         <where>
-            <if test="tbContent.title != null and tbContent.title != ''" >
+            <if test="title != null and title != ''" >
                 AND a.title LIKE CONCAT('%', #{title}, '%')
             </if>
-            <if test="tbContent.subTitle != null and tbContent.subTitle != ''" >
+            <if test="subTitle != null and subTitle != ''" >
                 AND a.sub_title LIKE CONCAT('%', #{subTitle}, '%')
             </if>
-            <if test="tbContent.titleDesc != null and tbContent.titleDesc != ''" >
+            <if test="titleDesc != null and titleDesc != ''" >
                 AND a.title_desc LIKE CONCAT('%', #{titleDesc}, '%')
             </if>
         </where>

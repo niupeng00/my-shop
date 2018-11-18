@@ -77,5 +77,27 @@
             <artifactId>validation-api</artifactId>
         </dependency>
         <!-- hibernate-validator End -->
+
+        <!-- Lombok Begin-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <!-- Lombok End -->
+
+        <!-- Spring Validation Begin -->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+        <!-- Spring Validation End -->
+
+        <!-- Spring Begin -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <!-- Spring End -->
+
     </dependencies>
 </project>

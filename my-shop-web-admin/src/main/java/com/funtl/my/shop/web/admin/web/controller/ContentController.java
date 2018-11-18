@@ -50,7 +50,7 @@ public class ContentController {
     }
 
     /**
-     * 用户添加,查看,编辑页面
+     * 添加,查看,编辑页面
      * @return
      */
     @GetMapping(value = "form")
