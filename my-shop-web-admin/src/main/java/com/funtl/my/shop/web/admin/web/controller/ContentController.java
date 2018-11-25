@@ -13,6 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -64,7 +65,7 @@ public class ContentController {
      * @return
      */
     @PostMapping(value = "save")
-    public String saveUser(TbContent tbContent, Model model, RedirectAttributes redirectAttributes){
+    public String save(TbContent tbContent, Model model, RedirectAttributes redirectAttributes){
         BaseResult baseResult = tbContentService.save(tbContent);
 
         //保存成功
@@ -118,6 +119,7 @@ public class ContentController {
 
         //封装插件 Datatables 需要的结果
         PageInfo<TbContent> pageInfo = tbContentService.page(start,length, draw, tbContent);
+        List<TbContent> tbContents = pageInfo.getData();
         return pageInfo;
         /*Enumeration<String> parameterNames = request.getParameterNames(); //测试传过来几个值
         while (parameterNames.hasMoreElements()){

@@ -1,17 +1,13 @@
 package com.funtl.my.shop.web.admin.service.impl;
 
-import com.alibaba.druid.filter.AutoLoad;
 import com.funtl.my.shop.commons.dto.BaseResult;
 import com.funtl.my.shop.commons.dto.PageInfo;
-import com.funtl.my.shop.commons.utils.RegexpUtils;
+import com.funtl.my.shop.commons.validator.BeanValidator;
 import com.funtl.my.shop.domain.TbContent;
-import com.funtl.my.shop.domain.TbUser;
 import com.funtl.my.shop.web.admin.dao.TbContentDao;
 import com.funtl.my.shop.web.admin.service.TbContentService;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.DigestUtils;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -31,8 +27,13 @@ public class TbContentServiceImpl implements TbContentService {
 
     @Override
     public BaseResult save(TbContent tbContent) {
-        BaseResult baseResult = checkTbContent(tbContent);
-        if (baseResult.getStatus() == BaseResult.STATUS_SUCCESS){
+
+        BaseResult baseResult = BaseResult.success("保存内容信息成功");
+        String validator = BeanValidator.validator(tbContent);
+        //数据验证不懂过
+        if (null != validator) {
+            baseResult = BaseResult.fail(validator);
+        } else {
             tbContent.setUpdated(new Date());
             //新增用户
             if (tbContent.getId() == null){
@@ -42,11 +43,7 @@ public class TbContentServiceImpl implements TbContentService {
                 //编辑用户
                 tbContentDao.update(tbContent);
             }
-            baseResult.setMessage("保存用户信息成功");
         }
-
-
-
         return baseResult;
     }
 
@@ -93,10 +90,10 @@ public class TbContentServiceImpl implements TbContentService {
     public Integer count(TbContent tbContent) {
         return tbContentDao.count(tbContent);
     }
-    /**
+ /*   *//**
      * 有效性验证
      * @param tbContent
-     */
+     *//*
     private BaseResult checkTbContent(TbContent tbContent){
         BaseResult baseResult = BaseResult.success();
 
@@ -119,5 +116,5 @@ public class TbContentServiceImpl implements TbContentService {
             baseResult = BaseResult.fail("标题描述不能为空");
         }
         return baseResult;
-    }
+    }*/
 }

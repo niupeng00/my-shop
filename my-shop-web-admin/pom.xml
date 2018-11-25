@@ -72,8 +72,6 @@
         </dependency>
         <!-- Database End -->
 
-
-
         <!-- Test Begin -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -84,12 +82,20 @@
             <artifactId>junit</artifactId>
         </dependency>
         <!-- Test End -->
+
         <!-- hibernate-validator Begtin -->
         <dependency>
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
         </dependency>
         <!-- hibernate-validator End -->
+
+        <!-- Fileupload Begin -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+        </dependency>
+        <!-- Fileupload End -->
     </dependencies>
 
 </project>

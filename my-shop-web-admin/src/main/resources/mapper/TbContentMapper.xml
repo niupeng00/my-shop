@@ -4,7 +4,6 @@
     <!-- SQL 片段<遵循重构原则,提取下面出现的重复列名> -->
     <sql id="tbContentColumns">
         a.id,
-        a.category_id AS categoryId,
         a.title,
         a.sub_title AS subTitle,
         a.title_desc AS titleDesc,
@@ -13,7 +12,13 @@
         a.pic2,
         a.content,
         a.created,
-        a.updated
+        a.updated,
+        b.id AS "tbContentCategory.id",
+        b.name AS "tbContentCategory.name"
+    </sql>
+
+    <sql id="tbContentJoins">
+        LEFT JOIN tb_content_category AS b ON a.category_id = b.id
     </sql>
 
     <select id="getByEmail" resultType="TbContent">
@@ -22,7 +27,7 @@
         FROM
           tb_content AS  a
         WHERE
-          u.email = #{email}
+          a.email = #{email}
     </select>
 
     <select id="selectAll" resultType="TbContent">
@@ -30,6 +35,7 @@
         <include refid="tbContentColumns" />
         FROM
         tb_content AS a
+        <include refid="tbContentJoins" />
     </select>
 
     <insert id="insert">
@@ -47,15 +53,15 @@
         )
         VALUES
           (
-            #{categoryId},
+            #{tbContentCategory.id},
             #{title},
             #{subTitle},
             #{titleDesc},
             #{url},
-            #{pic}
-            #{pic2}
-            #{content}
-            #{created}
+            #{pic},
+            #{pic2},
+            #{content},
+            #{created},
             #{updated}
           )
     </insert>
@@ -69,16 +75,16 @@
         <include refid="tbContentColumns" />
         FROM
         tb_content AS a
+        <include refid="tbContentJoins" />
         WHERE
-        u.id = #{id}
+        a.id = #{id}
     </select>
 
     <update id="update">
         UPDATE
             tb_content
         SET
-            id = #{id},
-            category_id = #{category_id},
+            category_id = #{tbContentCategory.id},
             title = #{title},
             sub_title = #{sub_title},
             title_desc = #{title_desc},
@@ -105,6 +111,7 @@
         <include refid="tbContentColumns" />
         FROM
         tb_content AS a
+        <include refid="tbContentJoins" />
         <where>
             <if test="tbContent.title != null and tbContent.title != ''" >
                 AND a.title LIKE CONCAT('%', #{tbContent.title}, '%')
