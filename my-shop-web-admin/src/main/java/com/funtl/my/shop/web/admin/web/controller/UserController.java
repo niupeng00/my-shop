@@ -4,6 +4,7 @@ import com.funtl.my.shop.commons.dto.BaseResult;
 import com.funtl.my.shop.commons.dto.PageInfo;
 import com.funtl.my.shop.commons.validator.BeanValidator;
 import com.funtl.my.shop.domain.TbUser;
+import com.funtl.my.shop.web.admin.abstracts.AbstractsBaseController;
 import com.funtl.my.shop.web.admin.service.TbUserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,10 +25,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping(value = "user")
-public class UserController {
-
-    @Autowired
-    TbUserService tbUserService;
+public class UserController extends AbstractsBaseController<TbUser, TbUserService> {
 
     /**
      * 在有GetMapping post put delete注解的方法执行前执行@ModelAttribute方法
@@ -39,7 +37,7 @@ public class UserController {
         TbUser tbUser = null;
         //id不为空,则从数据库获取
         if (id != null ){
-            tbUser = tbUserService.getById(id);
+            tbUser = service.getById(id);
         }else {
             tbUser = new TbUser();
         }
@@ -50,6 +48,7 @@ public class UserController {
      * 跳转到用户列表页面
      * @return
      */
+    @Override
     @GetMapping(value = "list")
     public String list(){
         return "user_list";
@@ -59,6 +58,7 @@ public class UserController {
      * 用户添加,查看,编辑页面
      * @return
      */
+    @Override
     @GetMapping(value = "form")
     public String from(){
         return "user_form";
@@ -69,11 +69,12 @@ public class UserController {
      * @param tbUser
      * @return
      */
+    @Override
     @PostMapping(value = "save")
-    public String saveUser(TbUser tbUser, Model model,RedirectAttributes redirectAttributes){
+    public String save(TbUser tbUser, Model model,RedirectAttributes redirectAttributes){
 
 
-        BaseResult baseResult = tbUserService.save(tbUser);
+        BaseResult baseResult = service.save(tbUser);
 
         //保存成功
         if (baseResult.getStatus() == BaseResult.STATUS_SUCCESS){
@@ -95,7 +96,7 @@ public class UserController {
      */
     @PostMapping(value = "search1")
     public String search1(String keyword,Model model){
-        List<TbUser> tbUsers = tbUserService.search1(keyword);
+        List<TbUser> tbUsers = service.search1(keyword);
         model.addAttribute("tbUsers",tbUsers);
         return "user_list";
     }
@@ -108,7 +109,7 @@ public class UserController {
      */
     @PostMapping(value = "search")
     public String search(TbUser tbUser,Model model){
-        List<TbUser> tbUsers = tbUserService.search(tbUser);
+        List<TbUser> tbUsers = service.search(tbUser);
         model.addAttribute("tbUsers",tbUsers);
         return "user_list";
     }
@@ -118,6 +119,7 @@ public class UserController {
      * @param ids
      * @return
      */
+    @Override
     @ResponseBody
     @RequestMapping(value = "delete",method = RequestMethod.POST)
     public BaseResult delete(String ids){
@@ -125,7 +127,7 @@ public class UserController {
         if (StringUtils.isNotBlank(ids)){
             baseResult = BaseResult.success("删除用户成功");
             String[] idArray = ids.split(",");
-            tbUserService.deleteMulti(idArray);
+            service.deleteMulti(idArray);
         } else {
             baseResult = BaseResult.fail("删除用户失败");
         }
@@ -137,6 +139,7 @@ public class UserController {
      * @param request
      * @return
      */
+    @Override
     @ResponseBody
     @RequestMapping(value = "page", method = {RequestMethod.GET})
     public PageInfo<TbUser> page(HttpServletRequest request, TbUser tbUser){
@@ -151,7 +154,7 @@ public class UserController {
         int length = strLength == null ? 10 : Integer.parseInt(strLength);
 
         //封装插件 Datatables 需要的结果
-        PageInfo<TbUser> pageInfo = tbUserService.page(start,length, draw, tbUser);
+        PageInfo<TbUser> pageInfo = service.page(start,length, draw, tbUser);
         return pageInfo;
         /*Enumeration<String> parameterNames = request.getParameterNames(); //测试传过来几个值
         while (parameterNames.hasMoreElements()){
@@ -160,6 +163,12 @@ public class UserController {
 
     }
 
+    /**
+     * 详情页面
+     * @param tbUser
+     * @return
+     */
+    @Override
     @GetMapping(value = "detail")
     public String detail(TbUser tbUser){
         System.out.println(tbUser.getEmail());

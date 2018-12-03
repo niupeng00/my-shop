@@ -5,6 +5,7 @@ import com.funtl.my.shop.commons.dto.PageInfo;
 import com.funtl.my.shop.commons.utils.RegexpUtils;
 import com.funtl.my.shop.commons.validator.BeanValidator;
 import com.funtl.my.shop.domain.TbUser;
+import com.funtl.my.shop.web.admin.abstracts.AbstractsBaseServiceImpl;
 import com.funtl.my.shop.web.admin.dao.TbUserDao;
 import com.funtl.my.shop.web.admin.service.TbUserService;
 import org.apache.commons.lang3.StringUtils;
@@ -19,14 +20,11 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class TbUserServiceImpl implements TbUserService {
-
-    @Autowired
-    private TbUserDao tbUserDao;
+public class TbUserServiceImpl extends AbstractsBaseServiceImpl<TbUser, TbUserDao> implements TbUserService{
 
     @Override
     public TbUser login(String email,String password){
-        TbUser tbUser = tbUserDao.getByEmail(email);
+        TbUser tbUser = dao.getByEmail(email);
         if (tbUser != null){
             //明文密码加密
             String md5Password = DigestUtils.md5DigestAsHex(password.getBytes());
@@ -38,11 +36,6 @@ public class TbUserServiceImpl implements TbUserService {
             }
         }
         return null;
-    }
-
-    @Override
-    public List<TbUser> selectAll() {
-        return tbUserDao.selectAll();
     }
 
     @Override
@@ -59,33 +52,18 @@ public class TbUserServiceImpl implements TbUserService {
             if (tbUser.getId() == null){
                 tbUser.setCreated(new Date());
                 tbUser.setPassword(DigestUtils.md5DigestAsHex(tbUser.getPassword().getBytes()));
-                tbUserDao.insert(tbUser);
+                dao.insert(tbUser);
             }else {
                 //编辑用户
-                tbUserDao.update(tbUser);
+                update(tbUser);
             }
             return BaseResult.success("保存用户信息成功");
         }
     }
 
     @Override
-    public void delete(long id) {
-        tbUserDao.delete(id);
-    }
-
-    @Override
-    public TbUser getById(long id) {
-        return tbUserDao.getById(id);
-    }
-
-    @Override
-    public void update(TbUser tbUser) {
-        tbUserDao.update(tbUser);
-    }
-
-    @Override
     public List<TbUser> selectByUsername(String username) {
-        return tbUserDao.selectByUsername(username);
+        return dao.selectByUsername(username);
     }
 
     @Override
@@ -94,48 +72,18 @@ public class TbUserServiceImpl implements TbUserService {
         tbUser.setUsername(keyword);
         tbUser.setPhone(keyword);
         tbUser.setEmail(keyword);
-        return tbUserDao.search1(tbUser);
+        return dao.search1(tbUser);
     }
     @Override
     public List<TbUser> search(TbUser tbUser) {
-        return tbUserDao.search(tbUser);
-    }
-
-    @Override
-    public void deleteMulti(String[] ids) {
-        tbUserDao.deleteMulti(ids);
-    }
-
-    @Override
-    public PageInfo<TbUser> page(int start, int length,int draw, TbUser tbUser) {
-
-        int count = tbUserDao.count(tbUser);
-
-        Map<String, Object> params = new HashMap<>();
-        params.put("start",start);
-        params.put("length", length);
-        params.put("tbUser", tbUser);
-
-        PageInfo<TbUser> pageInfo = new PageInfo<>();
-        pageInfo.setDraw(draw);
-        pageInfo.setRecordsFiltered(count);
-        pageInfo.setRecordsTotal(count);
-        pageInfo.setData(tbUserDao.page(params));
-
-
-        return pageInfo;
-    }
-
-    @Override
-    public Integer count(TbUser tbUser) {
-        return tbUserDao.count(tbUser);
+        return dao.search(tbUser);
     }
 
     /**
      * 用户信息的有效性验证
      * @param tbUser
      */
-    private BaseResult checkTbUser(TbUser tbUser){
+    /*private BaseResult checkTbUser(TbUser tbUser){
         BaseResult baseResult = BaseResult.success();
 
         //非空验证
@@ -153,5 +101,5 @@ public class TbUserServiceImpl implements TbUserService {
             baseResult = BaseResult.fail("手机号码格式不正确,请重新输入");
         }
         return baseResult;
-    }
+    }*/
 }

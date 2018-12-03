@@ -1,19 +1,15 @@
 package com.funtl.my.shop.web.admin.dao;
 
+import com.funtl.my.shop.commons.persistence.BaseDao;
 import com.funtl.my.shop.domain.TbContent;
+import com.funtl.my.shop.domain.TbUser;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
 
 @Repository
-public interface TbContentDao {
-
-    /**
-     * 查询全部信息
-     * @return List<TbUser>
-     */
-    List<TbContent> selectAll();
+public interface TbContentDao extends BaseDao<TbContent> {
 
     /**
      * 添加
@@ -28,13 +24,6 @@ public interface TbContentDao {
     void delete(long id);
 
     /**
-     * 根据ID查询
-     * @param id
-     * @return TbUser
-     */
-    TbContent getById(long id);
-
-    /**
      * 更新
      * @param tbContent
      */
@@ -46,12 +35,6 @@ public interface TbContentDao {
      */
     void deleteMulti(String[] ids);
 
-    /**
-     * 分页查询
-     * @param params,需要两个参数,start:记录数开始的位置  length:每页记录数
-     * @return
-     */
-    List<TbContent> page(Map<String, Object> params);
 
     /**
      * 查询数据的总数

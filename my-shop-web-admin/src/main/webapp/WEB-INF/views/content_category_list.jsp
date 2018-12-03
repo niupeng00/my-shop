@@ -76,15 +76,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <c:forEach items="${requestScope.list}" var="list">
-                                        <tr id="${list.id}" pId="${list.parentId}">
-                                            <td>${list.id}</td>
-                                            <td>${list.name}</td>
-                                            <td>${list.sortOrder}</td>
+                                    <c:forEach items="${requestScope.list}" var="tbContentCategory">
+                                        <tr id="${tbContentCategory.id}" pId="${tbContentCategory.parent.id}">
+                                            <td>${tbContentCategory.id}</td>
+                                            <td>${tbContentCategory.name}</td>
+                                            <td>${tbContentCategory.sortOrder}</td>
                                             <td>
-                                                <a href="#" type="button" class="btn btn-primary btn-xs" ><i class="fa fa-edit"> 编辑</i></a>&nbsp;&nbsp;&nbsp;
+                                                <a href="/content/category/form?id=${tbContentCategory.id}" type="button" class="btn btn-primary btn-xs" ><i class="fa fa-edit"> 编辑</i></a>&nbsp;&nbsp;&nbsp;
                                                 <button type="button" class="btn btn-danger  btn-xs" ><i class="fa fa-trash-o"> 删除</i></button>&nbsp;&nbsp;&nbsp;
-                                                <a href="#" type="button" class="btn btn-default  btn-xs" ><i class="fa fa-plus"> 新增下级菜单</i></a>
+                                                <a href="/content/category/form?parent.id=${tbContentCategory.id}&parent.name=${tbContentCategory.name}" type="button" class="btn btn-default  btn-xs" ><i class="fa fa-plus"> 新增下级菜单</i></a>
                                             </td>
                                         </tr>
                                     </c:forEach>
