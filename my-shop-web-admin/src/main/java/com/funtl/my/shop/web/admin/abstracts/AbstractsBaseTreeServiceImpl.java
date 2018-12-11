@@ -3,6 +3,7 @@ package com.funtl.my.shop.web.admin.abstracts;
 import com.funtl.my.shop.commons.persistence.*;
 import com.funtl.my.shop.domain.TbContentCategory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ public abstract class AbstractsBaseTreeServiceImpl<T extends BaseEntity, D exten
     }
 
     @Override
+    @Transactional(readOnly = false)
     public void delete(long id) {
         baseTreeDao.delete(id);
     }
@@ -31,6 +33,7 @@ public abstract class AbstractsBaseTreeServiceImpl<T extends BaseEntity, D exten
     }
 
     @Override
+    @Transactional(readOnly = false)
     public void update(T tbContentCategory){
         baseTreeDao.update(tbContentCategory);
     }

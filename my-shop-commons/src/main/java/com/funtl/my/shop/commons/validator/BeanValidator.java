@@ -1,6 +1,8 @@
 package com.funtl.my.shop.commons.validator;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
+
 import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import javax.validation.Validator;
@@ -145,4 +147,5 @@ public class BeanValidator {
 
         return null;
     }
+
 }

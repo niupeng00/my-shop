@@ -125,9 +125,9 @@ public class UserController extends AbstractsBaseController<TbUser, TbUserServic
     public BaseResult delete(String ids){
         BaseResult baseResult = null;
         if (StringUtils.isNotBlank(ids)){
-            baseResult = BaseResult.success("删除用户成功");
             String[] idArray = ids.split(",");
             service.deleteMulti(idArray);
+            baseResult = BaseResult.success("删除用户成功");
         } else {
             baseResult = BaseResult.fail("删除用户失败");
         }
@@ -139,7 +139,7 @@ public class UserController extends AbstractsBaseController<TbUser, TbUserServic
      * @param request
      * @return
      */
-    @Override
+   /* @Override
     @ResponseBody
     @RequestMapping(value = "page", method = {RequestMethod.GET})
     public PageInfo<TbUser> page(HttpServletRequest request, TbUser tbUser){
@@ -156,12 +156,12 @@ public class UserController extends AbstractsBaseController<TbUser, TbUserServic
         //封装插件 Datatables 需要的结果
         PageInfo<TbUser> pageInfo = service.page(start,length, draw, tbUser);
         return pageInfo;
-        /*Enumeration<String> parameterNames = request.getParameterNames(); //测试传过来几个值
+        *//*Enumeration<String> parameterNames = request.getParameterNames(); //测试传过来几个值
         while (parameterNames.hasMoreElements()){
             System.out.println(String.format("key: %s  value: %s",parameterNames.nextElement(), request.getParameter(parameterNames.nextElement())));
-        }*/
+        }*//*
 
-    }
+    }*/
 
     /**
      * 详情页面

@@ -71,77 +71,106 @@ var App = function () {
         });
     };
 
+    /**
+     * 删除一条数据
+     * @param url 删除链接
+     * @param id  删除数据的 ID
+     * @param msg
+     */
+    var handlerDeleteSingle = function (url, id, msg) {
+        //可选参数
+        if (!msg) msg = null;
+        //将 ID 放入数组中, 以便和批量删除通用
+        _idArray = new Array();
+        _idArray.push(id);
+
+        $("#modal-message").html(msg == null ? "您确定要删除数据项吗?" : msg)
+        $("#modal-default").modal("show");
+        //绑定删除事件
+        $("#btnModal").bind("click", function () {
+            handlerDeleteData(url);
+        });
+    }
+    /**
+     * 批量删除
+     * @param url
+     */
     var handlerDeleteMulti = function (url) {
         _idArray = new Array();
 
         //将选中的元素的 ID 放到数组中
         _checkbox.each(function () {
             var _id = $(this).attr("id");
-            if (_id != null && _id != "undefine" && $(this).is(":checked")){
+            if (_id != null && _id != "undefine" && $(this).is(":checked")) {
                 _idArray.push(_id);
             }
         });
 
-        $("#modal-default").modal("show");
-
         //判断用户是否选择了数据项
-        if (_idArray.length === 0){
+        if (_idArray.length === 0) {
             $("#modal-message").html("您还没有选择任何数据项,至少选择一项!");
         } else {
             $("#modal-message").html("您确定要删除选择的数据项吗?删除后不可恢复!");
         }
 
-        //绑定"确定"按钮事件
+        //点击删除按钮时弹出模态框
+        $("#modal-default").modal("show");
+
+        //如果用户选择了数据项则调用删除方法
         $("#btnModal").bind("click", function () {
-            del();
+            handlerDeleteData();
         })
-
-        /**
-         * 当前私有函数的私有函数,只能当前私有函数可以调用
-         * 作用:删除数据
-         */
-        function del() {
-            $("#modal-default").modal("hide");
-            if (_idArray.length === 0){
-                //.........
-
-            } else {
-                setTimeout(function () {
-                    $.ajax({
-                        "url": url,
-                        "type": "POST",
-                        "data": {"ids": _idArray.toString()},
-                        "dataType": "JSON",
-                        "success": function (data) {
-                            //删除成功
-                            if (data.status === 200){
-                                dataMessage(data);
-                                setTimeout(function () {
-                                    window.location.reload();
-                                },500)
-                            }
-                            //删除失败
-                            else {
-                                dataMessage(data);
-                            }
-                        },
-                    });
-                },500);
-
-            }
-        }
-        
-        function dataMessage(data) {
-            $("#btnModal").unbind("click");
-
-            $("#modal-message").html(data.message);
-            $("#modal-default").modal("show");
-
-            $("#btnModal").bind("click", function () {
-                $("#modal-default").modal("hide");
-            })
-        }
     };
+    /**
+     * AJAX 异步删除
+     * @param url
+     */
+    function handlerDeleteData() {
+        $("#modal-default").modal("hide");
+        if (_idArray.length > 0){
+            setTimeout(function () {
+                // AJAX 异步删除操作
+                $.ajax({
+                    "url": url,
+                    "type": "POST",
+                    "data": {"ids": _idArray.toString()},
+                    "dataType": "JSON",
+                    "success": function (data) {
+                        //请求成功后, 无论是成功还是失败都需要弹出模态框进行提示, 所以这里需要先解绑原来的 click 事件
+                        $("#btnModal").unbind("click");
+                        //删除成功
+                        if (data.status === 200) {
+                            //刷新页面
+                            $("#btnModal").bind("click", function () {
+                                window.location.reload();
+                            });
+                        }
+                        //删除失败
+                        else {
+                            //确定无论如何都需要提示信息, 所以这里的模态框是必须调用的
+                            $("#btnModal").bind("click", function () {
+                                $("#modal-default").modal("hide");
+                            });
+                        }
+                        //确定无论如何都需要提示信息, 所以这里的模态框是必须调用的
+                        $("#modal-message").html(data.message);
+                        $("#modal-default").modal("show");
+                    },
+                });
+            }, 500)
+        }
+    }
+
+    /*function dataMessage(data) {
+        $("#btnModal").unbind("click");
+
+        $("#modal-message").html(data.message);
+        $("#modal-default").modal("show");
+
+        $("#btnModal").bind("click", function () {
+            $("#modal-default").modal("hide");
+        })
+    }*/
 
     /**
      * 查看详情
@@ -294,6 +323,15 @@ var App = function () {
         },
 
         /**
+         * 删除一条信息
+         * @param url
+         * @param id
+         */
+        deleteSingle: function (url, id, msg) {
+            handlerDeleteSingle(url, id ,msg);
+        },
+
+        /**
          * 批量删除
          * @param url
          */
@@ -342,3 +380,109 @@ var App = function () {
 $(document).ready(function () {
     App.init();
 });
+
+
+/**
+ * 以前方法 可以使用
+ */
+/*var handlerDeleteMulti = function (url) {
+    _idArray = new Array();
+
+    //将选中的元素的 ID 放到数组中
+    _checkbox.each(function () {
+        var _id = $(this).attr("id");
+        if (_id != null && _id != "undefine" && $(this).is(":checked")) {
+            _idArray.push(_id);
+        }
+    });
+
+    $("#modal-default").modal("show");
+
+    //判断用户是否选择了数据项
+    if (_idArray.length === 0) {
+        $("#modal-message").html("您还没有选择任何数据项,至少选择一项!");
+    } else {
+        $("#modal-message").html("您确定要删除选择的数据项吗?删除后不可恢复!");
+    }
+
+    //绑定"确定"按钮事件
+    $("#btnModal").bind("click", function () {
+        handlerDeleteData();
+    })
+
+    /!**
+     * 当前私有函数的私有函数,只能当前私有函数可以调用
+     * 作用:删除数据
+     *!/
+    function handlerDeleteData() {
+        $("#modal-default").modal("hide");
+        if (_idArray.length === 0){
+            //.........
+            /!* setTimeout(function () {
+                 $.ajax({
+                     "url": url,
+                     "type": "POST",
+                     "data": {"ids": _idArray.toString()},
+                     "dataType": "JSON",
+                     "success": function (data) {
+                         //请求成功后, 无论是成功还是失败都需要弹出模态框进行提示, 所以这里需要先解绑原来的 click 事件
+                         $("#btnModal").unbind("click");
+                         //删除成功
+                         if (data.status === 200){
+                             //刷新页面
+                             $("#btnModal").bind("click", function () {
+                                 window.location.reload();
+                             });
+                         }
+                         //删除失败
+                         else {
+                             //确定无论如何都需要提示信息, 所以这里的模态框是必须调用的
+                             $("#btnModal").bind("click", function () {
+                                 $("#modal-default").modal("hide");
+                             });
+                         }
+                         //确定无论如何都需要提示信息, 所以这里的模态框是必须调用的
+                         $("#modal-message").html(data.message);
+                         $("#modal-default").modal("show");
+                     },
+                 });
+             },500);*!/
+
+        } else {
+            //如果这里有毛病请使用上面的方法
+            setTimeout(function () {
+                $.ajax({
+                    "url": url,
+                    "type": "POST",
+                    "data": {"ids": _idArray.toString()},
+                    "dataType": "JSON",
+                    "success": function (data) {
+                        //删除成功
+                        if (data.status === 200){
+                            dataMessage(data);
+                            setTimeout(function () {
+                                window.location.reload();
+                            },500)
+                        }
+                        //删除失败
+                        else {
+                            dataMessage(data);
+                        }
+                    },
+                });
+            },500);
+
+        }
+    }
+
+    function dataMessage(data) {
+        $("#btnModal").unbind("click");
+
+        $("#modal-message").html(data.message);
+        $("#modal-default").modal("show");
+
+        $("#btnModal").bind("click", function () {
+            $("#modal-default").modal("hide");
+        })
+    }
+};*/

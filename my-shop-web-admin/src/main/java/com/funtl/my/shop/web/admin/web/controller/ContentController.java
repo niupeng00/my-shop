@@ -104,7 +104,7 @@ public class ContentController {
      * @param request
      * @return
      */
-    @ResponseBody
+    /*@ResponseBody
     @RequestMapping(value = "page", method = {RequestMethod.GET})
     public PageInfo<TbContent> page(HttpServletRequest request, TbContent tbContent){
         Map<String, Object> result = new HashMap<>();
@@ -121,13 +121,13 @@ public class ContentController {
         PageInfo<TbContent> pageInfo = tbContentService.page(start,length, draw, tbContent);
         List<TbContent> tbContents = pageInfo.getData();
         return pageInfo;
-        /*Enumeration<String> parameterNames = request.getParameterNames(); //测试传过来几个值
+        *//*Enumeration<String> parameterNames = request.getParameterNames(); //测试传过来几个值
         while (parameterNames.hasMoreElements()){
             System.out.println(String.format("key: %s  value: %s",parameterNames.nextElement(), request.getParameter(parameterNames.nextElement())));
-        }*/
+        }*//*
 
     }
-
+*/
     /**
      * 显示详情
      * @param tbContent

@@ -183,6 +183,7 @@
             {
                 'data': function (row, type, val, meta) {
                     var detailURL = "/content/detail?id="+row.id;
+                    var deleteUrl = "/user/delete";
                     return '<button type="button" class="btn btn-default btn-xs" onclick="App.showDetail(\''+detailURL+'\')"><i class="fa fa-search"> 查看</i></a>&nbsp;&nbsp;&nbsp;'+
                         '<a href="/content/form?id='+row.id+'" type="button" class="btn btn-primary btn-xs" ><i class="fa fa-edit"> 编辑</i></a>&nbsp;&nbsp;&nbsp;'+
                         '<button type="button" class="btn btn-danger  btn-xs"><i class="fa fa-trash-o" onclick="App.deleteMulti(\'/content/delete\')"> 删除</i></a>'
@@ -190,8 +191,8 @@
             },
         ];
         _dataTable = App.initDataTables("/content/page", _columns);
-        _dataTable.settings()[0].ajax.data = param;
-        _dataTable.ajax.reload();
+        /*_dataTable.settings()[0].ajax.data = param;
+        _dataTable.ajax.reload();*/
     });
 
     function search() {

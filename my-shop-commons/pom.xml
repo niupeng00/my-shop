@@ -21,6 +21,14 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
+
+        <!-- Fileupload Begin -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+        </dependency>
+        <!-- Fileupload End -->
+
         <!-- Log Begin -->
         <dependency>
             <groupId>org.slf4j</groupId>

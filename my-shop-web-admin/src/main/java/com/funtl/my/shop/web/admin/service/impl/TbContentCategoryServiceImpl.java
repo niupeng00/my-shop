@@ -9,14 +9,17 @@ import com.funtl.my.shop.web.admin.dao.TbContentCategoryDao;
 import com.funtl.my.shop.web.admin.service.TbContentCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 import java.util.List;
 
 @Service
+@Transactional(readOnly = true)
 public class TbContentCategoryServiceImpl extends AbstractsBaseTreeServiceImpl<TbContentCategory, TbContentCategoryDao> implements TbContentCategoryService {
 
     @Override
+    @Transactional(readOnly = false)
     public BaseResult save(TbContentCategory tbContentCategory) {
         String validator = BeanValidator.validator(tbContentCategory);
         if (validator != null) {

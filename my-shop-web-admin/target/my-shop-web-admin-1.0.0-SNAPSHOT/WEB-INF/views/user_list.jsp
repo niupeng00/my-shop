@@ -174,15 +174,16 @@
             {
                 'data': function (row, type, val, meta) {
                     var detailURL = "/user/detail?id="+row.id;
+                    var deleteUrl = "/user/delete";
                     return '<button type="button" class="btn btn-default btn-xs" onclick="App.showDetail(\''+detailURL+'\')"><i class="fa fa-search"> 查看</i></a>&nbsp;&nbsp;&nbsp;'+
                         '<a href="/user/form?id='+row.id+'" type="button" class="btn btn-primary btn-xs" ><i class="fa fa-edit"> 编辑</i></a>&nbsp;&nbsp;&nbsp;'+
-                        '<button type="button" class="btn btn-danger  btn-xs"><i class="fa fa-trash-o" onclick="App.deleteMulti(\'/user/delete\')"> 删除</i></a>'
+                        '<button type="button" class="btn btn-danger  btn-xs"><i class="fa fa-trash-o" onclick="App.deleteSingle(\''+deleteUrl+'\',\''+row.id+'\')"> 删除</i></a>'
                 }
             },
         ];
         _dataTable = App.initDataTables("/user/page", _columns);
-        _dataTable.settings()[0].ajax.data = param;
-        _dataTable.ajax.reload();
+        /*_dataTable.settings()[0].ajax.data = param;
+        _dataTable.ajax.reload();*/
     });
 
     function search() {

@@ -2,7 +2,9 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <context:annotation-config />
     <context:component-scan base-package="com.funtl.my.shop.web.admin">
@@ -16,4 +18,30 @@
         <!-- Spring只能注入对象,不能注入属性,所以需要手动注入  注意:凡是 static 修饰的就是属性,非对象 -->
         <property name="validator" ref="validator" />
     </bean>
+
+    <!--&lt;!&ndash; 配置事务管理器 &ndash;&gt; -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    <!-- 开启事务注解驱动 -->
+    <tx:annotation-driven transaction-manager="transactionManager" />
+
+    <!-- 使用 AspectJ 的 AOP 配置管理事务 即XML的方式 -->
+    <!--&lt;!&ndash; 配置事务管理器 &ndash;&gt;
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+    &lt;!&ndash; 配置事务通知 &ndash;&gt;
+    <tx:advice id="myAdvice" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="save*" propagation="REQUIRED"/>
+        </tx:attributes>
+    </tx:advice>
+
+    &lt;!&ndash; 配置顾问和切入点 &ndash;&gt;
+    <aop:config>
+        <aop:pointcut id="myPointcut" expression="execution(* com.funtl.my.shop.web.admin.service.*.*(..))" />
+        <aop:advisor advice-ref="myAdvice" pointcut-ref="myPointcut" />
+    </aop:config>-->
 </beans>
