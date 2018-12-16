@@ -1,10 +1,13 @@
 package com.funtl.my.shop.web.api.web.dto;
 
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
  *  内容数据传输对象
  */
+@Data
 public class TbContentDTO implements Serializable {
     private Long id;
     private String title;
