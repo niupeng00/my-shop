@@ -177,6 +177,20 @@ public class MapperUtils {
         return list;
     }
 
+    /**
+     * 将指定节点的 JSON 数组转换为集合
+     * @param jsonStr JSON 字符串
+     * @param treeNode 查找 JSON 中的节点
+     * @param clazz
+     * @param <T>
+     * @return
+     * @throws Exception
+     */
+    public static <T> List<T> json2listByTree(String jsonStr, String treeNode, Class<T> clazz) throws Exception {
+        JsonNode jsonNode = objectMapper.readTree(jsonStr);
+        JsonNode data = jsonNode.findPath(treeNode);
+        return json2list(data.toString(), clazz);
+    }
 
     /**
      * 获取泛型的 Collection Type

@@ -33,17 +33,4 @@
         <property name="maxUploadSize" value="${web.maxUploadSize}"/>
     </bean>
 
-    <!-- 拦截器配置，拦截顺序：先执行后定义的，排在第一位的最后执行。-->
-    <!--<mvc:interceptors>
-        <mvc:interceptor>
-            <mvc:mapping path="/**"/>
-            <mvc:exclude-mapping path="/login"/>
-            <mvc:exclude-mapping path="/static/**"/>
-            <bean class="com.funtl.my.shop.web.admin.web.interceptor.LoginInterceptor" />
-        </mvc:interceptor>
-        <mvc:interceptor>
-            <mvc:mapping path="/**"/>
-            <bean class="com.funtl.my.shop.web.admin.web.interceptor.PermissionInterceptor" />
-        </mvc:interceptor>
-    </mvc:interceptors>-->
 </beans>
