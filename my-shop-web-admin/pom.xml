@@ -94,6 +94,13 @@
         </dependency>
         <!-- hibernate-validator End -->
 
+        <!-- Google Code Begin -->
+        <dependency>
+            <groupId>com.github.penggle</groupId>
+            <artifactId>kaptcha</artifactId>
+        </dependency>
+        <!-- Google Code End -->
+
     </dependencies>
 
 </project>

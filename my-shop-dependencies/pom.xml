@@ -45,6 +45,8 @@
         <hibernate-validator.version>6.0.12.Final</hibernate-validator.version>
         <fileupload.version>1.3.3</fileupload.version>
         <http-client.version>4.5.5</http-client.version>
+        <kaptcha.version>2.3.2</kaptcha.version>
+        <commons-email>1.5</commons-email>
     </properties>
 
     <dependencyManagement>
@@ -119,6 +121,11 @@
                 <groupId>commons-fileupload</groupId>
                 <artifactId>commons-fileupload</artifactId>
                 <version>${fileupload.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-email</artifactId>
+                <version>${commons-email}</version>
             </dependency>
             <!-- Commons End -->
 
@@ -256,10 +263,26 @@
             </dependency>
             <!-- Apache Http End -->
 
+            <!-- Google Code Begin -->
+            <dependency>
+                <groupId>com.github.penggle</groupId>
+                <artifactId>kaptcha</artifactId>
+                <version>${kaptcha.version}</version>
+            </dependency>
+            <!-- Google Code End -->
         </dependencies>
     </dependencyManagement>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>2.5.2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
         <plugins>
             <!-- Compiler 插件, 设定 JDK 版本 -->
             <plugin>

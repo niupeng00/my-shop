@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.funtl</groupId>
+        <artifactId>my-shop-dependencies</artifactId>
+        <version>1.0.0-SNAPSHOT</version>
+        <relativePath>../my-shop-dependencies/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>my-shop-external</artifactId>
+    <packaging>jar</packaging>
+
+    <name>my-shop-external</name>
+    <description></description>
+
+    <!--<build> //处理maven下载不下来的jar方法 把jar放到libs中
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>install-external-kaptcha</id>
+                        &lt;!&ndash; 触发时机：执行 mvn clean 命令时自动触发插件 &ndash;&gt;
+                        <phase>clean</phase>
+                        <configuration>
+                            &lt;!&ndash; 存放依赖文件的位置 &ndash;&gt;
+                            <file>${project.basedir}/libs/kaptcha-2.3.jar</file>
+                            <repositoryLayout>default</repositoryLayout>
+                            &lt;!&ndash; 自定义 groupId &ndash;&gt;
+                            <groupId>com.google.code.kaptcha</groupId>
+                            &lt;!&ndash; 自定义 artifactId &ndash;&gt;
+                            <artifactId>kaptcha</artifactId>
+                            &lt;!&ndash; 自定义版本号 &ndash;&gt;
+                            <version>2.3.2</version>
+                            &lt;!&ndash; 打包方式 &ndash;&gt;
+                            <packaging>jar</packaging>
+                            &lt;!&ndash; 是否自动生成 POM &ndash;&gt;
+                            <generatePom>true</generatePom>
+                        </configuration>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>-->
+</project>

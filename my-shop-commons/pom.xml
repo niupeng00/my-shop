@@ -17,10 +17,17 @@
     <description></description>
 
     <dependencies>
+        <!-- Commons Begin -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-email</artifactId>
+        </dependency>
+        <!-- Commons End -->
 
         <!-- Fileupload Begin -->
         <dependency>

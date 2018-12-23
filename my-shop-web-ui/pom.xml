@@ -18,6 +18,8 @@
 
         <dependencies>
 
+
+
             <!-- Project Begin -->
             <dependency>
                 <groupId>com.funtl</groupId>
@@ -86,6 +88,13 @@
                 <artifactId>junit</artifactId>
             </dependency>
             <!-- Test End -->
+
+            <!-- Google Code Begin -->
+            <dependency>
+                <groupId>com.github.penggle</groupId>
+                <artifactId>kaptcha</artifactId>
+            </dependency>
+            <!-- Google Code End -->
 
         </dependencies>
 
